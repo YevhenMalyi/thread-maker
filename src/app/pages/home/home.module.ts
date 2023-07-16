@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-
+import { FeaturesModule } from 'src/app/features/thread';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,8 @@ import { HomeComponent } from './home.component';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    FeaturesModule,
   ]
 })
 export class HomeModule { }
