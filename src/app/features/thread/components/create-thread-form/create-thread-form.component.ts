@@ -8,11 +8,11 @@ import { ThreadsService } from '../../services';
   templateUrl: './create-thread-form.component.html',
   styleUrls: ['./create-thread-form.component.scss']
 })
-export class CreateThreadFormComponent implements OnInit {
+export class CreateThreadFormComponent {
   createThreadForm: FormGroup = this.formBuilder.group({
     text: ['', Validators.required],
     prefix: [''],
-    suffix: ['']
+    postfix: ['']
   });
   
   constructor(
@@ -20,12 +20,7 @@ export class CreateThreadFormComponent implements OnInit {
     private formBuilder: FormBuilder,
   ) {}
 
-  ngOnInit(): void {
-    this.threadsService.test();
-  }
-
   onFormSubmit(): void {
-    console.log(this.createThreadForm);
-    this.threadsService.test();
+    this.threadsService.create(this.createThreadForm.value);
   }
 }
