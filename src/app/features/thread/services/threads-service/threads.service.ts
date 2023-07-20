@@ -14,13 +14,13 @@ export class ThreadsService {
 
   create({ text, prefix = '', postfix = '' }: IRawThread): void {
     const maxTextLength = THREAD_LENGTH - prefix.length - postfix.length;
-    const result = this.splitToChunks(text, maxTextLength)
+    const result = this.splitToChunks(text, maxTextLength, ' ')
       .map((textChunk: string) => `${prefix}${textChunk}${postfix}`);
     console.log(result);
   }
 
-  splitToChunks(inputString: string, chunkSize: number) {
-    let words = inputString.split(' ');
+  splitToChunks(inputString: string, chunkSize: number, splitBy: string) {
+    let words = inputString.split(splitBy);
     let chunks = [];
     let currentChunk = '';
 
