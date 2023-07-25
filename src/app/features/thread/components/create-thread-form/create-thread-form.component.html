@@ -10,6 +10,7 @@
       cdkTextareaAutosize 
       name="text" 
       formControlName="text"
+      (input)="updateThread()"
     ></textarea>
   </mat-form-field>
 
@@ -20,6 +21,7 @@
       type="text" 
       name="prefix" 
       formControlName="prefix"
+      (input)="updateThread()"
     />
   </mat-form-field>
   
@@ -29,6 +31,7 @@
       matInput type="text" 
       name="postfix" 
       formControlName="postfix"
+      (input)="updateThread()"
     />
   </mat-form-field>
 

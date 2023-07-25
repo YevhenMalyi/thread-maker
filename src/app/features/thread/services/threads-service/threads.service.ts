@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 const THREAD_LENGTH = 255;
 
@@ -10,21 +11,23 @@ interface IRawThread {
 
 @Injectable({ providedIn: 'root' })
 export class ThreadsService {
-  constructor() { }
+  private readonly thread$ = new BehaviorSubject<string[]>([]);
 
-  create({ text, prefix = '', postfix = '' }: IRawThread): void {
-    let result: string[] = this.splitByParagraph(text);
-    this.log(result);
-    
-    result = result
+  get(): Observable<string[]> {
+    return this.thread$.asObservable();
+  }
+
+  update(rawThread: IRawThread) {
+    const processedThread = this.process(rawThread);
+    this.thread$.next(processedThread);
+  }
+
+  process({ text, prefix = '', postfix = '' }: IRawThread): string[] {
+    return this.splitByParagraph(text)
       .map(chunk =>  this.splitBySentence(chunk, prefix, postfix))
-      .flat();
-    this.log(result);
-    
-    result = result
+      .flat()
       .map(chunk =>  this.splitByWord(chunk, prefix, postfix))
       .flat();
-    this.log(result);
   }
 
   splitByParagraph(text: string): string[] {
