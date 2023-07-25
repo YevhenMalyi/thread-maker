@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 
-import { CreateThreadFormModule } from './components';
-
+import { CreateThreadFormModule, ProcessedThreadModule } from './components';
 
 @NgModule({
   imports: [],
   exports: [
     CreateThreadFormModule,
+    ProcessedThreadModule,
   ],
   declarations: [],
   providers: [],

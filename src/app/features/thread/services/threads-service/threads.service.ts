@@ -64,10 +64,6 @@ export class ThreadsService {
 
     return chunks;
   }
-
-  log(data: string[]): void {
-    console.log(data, data.map(item => item.length));
-  }
 }
 
 const a = `
