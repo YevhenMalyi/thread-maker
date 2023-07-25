@@ -21,6 +21,7 @@ export class CreateThreadFormComponent {
   ) {}
 
   onFormSubmit(): void {
-    this.threadsService.create(this.createThreadForm.value);
+    const { value } = this.createThreadForm;
+    this.threadsService.create(value);
   }
 }

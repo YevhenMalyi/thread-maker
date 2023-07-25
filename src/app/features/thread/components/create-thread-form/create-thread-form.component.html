@@ -5,17 +5,31 @@
 >
   <mat-form-field>
     <mat-label for="text">Your text</mat-label>
-    <textarea matInput name="text" formControlName="text"></textarea>
+    <textarea 
+      matInput 
+      cdkTextareaAutosize 
+      name="text" 
+      formControlName="text"
+    ></textarea>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label for="prefix">prefix</mat-label>
-    <input matInput type="textarea" name="prefix" formControlName="prefix"/>
+    <input 
+      matInput 
+      type="text" 
+      name="prefix" 
+      formControlName="prefix"
+    />
   </mat-form-field>
   
   <mat-form-field>
     <mat-label for="postfix">Postfix</mat-label>
-    <input matInput type="textarea" name="postfix" formControlName="postfix"/>
+    <input 
+      matInput type="text" 
+      name="postfix" 
+      formControlName="postfix"
+    />
   </mat-form-field>
 
   <button mat-flat-button type="submit" color="primary">
