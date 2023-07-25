@@ -4,10 +4,12 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { FeaturesModule } from 'src/app/features/thread';
+import { HomeContentComponent } from './home-content';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    HomeContentComponent,
   ],
   imports: [
     CommonModule,

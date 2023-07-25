@@ -5,7 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
-  public readonly title: string = 'Thread Maker';
-  public readonly subtitle: string = 'easy text to twitter/threads/bluesky thread converter';
-}
+export class HeaderComponent {}
