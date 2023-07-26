@@ -1,3 +1,10 @@
-<p *ngFor="let chunk of thread">
-  {{ chunk }}
-</p>
+<ng-container *ngIf="thread.length; else emptyThread">
+  <p *ngFor="let chunk of thread" class="app-processed-thread__paragraph">
+    {{ chunk }}
+  </p>
+</ng-container>
+
+
+<ng-template #emptyThread>
+  <p class="app-processed-thread__empty-thread">Thread is empty</p>
+</ng-template>
