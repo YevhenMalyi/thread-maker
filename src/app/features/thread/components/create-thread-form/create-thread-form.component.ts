@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
-import { ThreadsService } from '../../services';
+import { ThreadsService, ThreadsSettingService } from '../../services';
 
 @Component({
   selector: 'app-create-thread-form',
@@ -16,17 +16,23 @@ export class CreateThreadFormComponent {
   });
   
   constructor(
-    private threadsService: ThreadsService,
     private formBuilder: FormBuilder,
+    private threadsService: ThreadsService,
+    private threadsSettings: ThreadsSettingService,
   ) {}
 
-  updateThread(): void {
+  processThread(): void {
     const { value } = this.createThreadForm;
     this.threadsService.update(value);
   }
 
-  onFormSubmit(): void {
-    const { value } = this.createThreadForm;
-    this.threadsService.update(value);
+  onUpdate(): void {
+    if (this.threadsSettings.updateOnChange) {
+      this.processThread();
+    }
+  }
+
+  onSubmit(): void {
+    this.processThread();
   }
 }

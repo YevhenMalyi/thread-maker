@@ -1,7 +1,7 @@
 <form 
   class="app-create-thread-form" 
   [formGroup]="createThreadForm"
-  (ngSubmit)="onFormSubmit()"
+  (ngSubmit)="onSubmit()"
 >
   <mat-form-field>
     <mat-label for="text">Your text</mat-label>
@@ -10,7 +10,7 @@
       cdkTextareaAutosize 
       name="text" 
       formControlName="text"
-      (input)="updateThread()"
+      (input)="onUpdate()"
     ></textarea>
   </mat-form-field>
 
@@ -21,7 +21,7 @@
       type="text" 
       name="prefix" 
       formControlName="prefix"
-      (input)="updateThread()"
+      (input)="onUpdate()"
     />
   </mat-form-field>
   
@@ -31,7 +31,7 @@
       matInput type="text" 
       name="postfix" 
       formControlName="postfix"
-      (input)="updateThread()"
+      (input)="onUpdate()"
     />
   </mat-form-field>
 
