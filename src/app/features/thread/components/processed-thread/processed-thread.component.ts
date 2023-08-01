@@ -15,10 +15,9 @@ export class ProcessedThreadComponent implements OnInit {
   constructor(private threadsService: ThreadsService) {}
 
   ngOnInit(): void {
-    this.threadsService.get()
-      .pipe(
-        takeUntilDestroyed(this.destroyRef)
-      )
+    this.threadsService
+      .get()
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(next => {
         console.log(next);
         this.thread = next;

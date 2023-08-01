@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   imports: [
@@ -11,12 +12,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSlideToggleModule,
   ],
   exports: [
     ReactiveFormsModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSlideToggleModule,
   ],
   declarations: [],
   providers: [],

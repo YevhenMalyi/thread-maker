@@ -8,19 +8,19 @@ export class ThreadsSettingService {
   private readonly threadLength$ = new BehaviorSubject<number>(DEFAULT_THREAD_LENGTH);
   private readonly updateOnChange$ = new BehaviorSubject<boolean>(false);
 
-  get threadLength(): Observable<number> | number {
+  getThreadLength(): Observable<number> {
     return this.threadLength$.asObservable();
   }
 
-  set threadLength(length: number) {
+  setThreadLength(length: number) {
     this.threadLength$.next(length);
   }
 
-  get updateOnChange(): Observable<boolean> | boolean {
+  getUpdateOnChange(): Observable<boolean> {
     return this.updateOnChange$.asObservable();
   }
 
-  set updateOnChange(value: boolean) {
+  setUpdateOnChange(value: boolean) {
     this.updateOnChange$.next(value);
   }
 }

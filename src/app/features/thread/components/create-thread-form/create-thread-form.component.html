@@ -3,6 +3,19 @@
   [formGroup]="createThreadForm"
   (ngSubmit)="onSubmit()"
 >
+  <div class="app-create-thread-form__config">
+    <mat-form-field>
+      <mat-label for="prefix">length</mat-label>
+      <input 
+        matInput 
+        type="text" 
+        name="length"
+      />
+    </mat-form-field>
+    
+    <mat-slide-toggle> Update thread on text change</mat-slide-toggle>
+  </div>
+
   <mat-form-field>
     <mat-label for="text">Your text</mat-label>
     <textarea 
